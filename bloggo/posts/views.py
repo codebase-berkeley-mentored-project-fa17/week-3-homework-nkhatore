@@ -23,4 +23,5 @@ def post_details(request, pk):
     # Question 2
     # You should create a new file in the templates directory.
     # REPLACE THE LINE WITH YOUR CODE
-    return HttpResponse("No post details page :(")
+    #all_posts = Post.objects.all()
+    return render(request, "posts/details.html", {"post": Post.objects.get(pk=int(pk))})
